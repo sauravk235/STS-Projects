@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Successfully</title>
+</head>
+<body>
+
+<h1> You have Registered Successfully </h1>
+<a th:href="@{/home}" > Home </a>
+<br><br>
+<a th:href="@{/logout}">Logout</a>
+<br>
+<br>
+
+<table>
+<tr>
+<th>First Name</th>		<
+<th>Last Name</th>
+<th>Courses</th>
+</tr>
+
+<tr> 	<!--	std1- is object in add method	-->
+<p> <td th:text="${std1.fName}"></td> </p>
+<p> <td th:text="${std1.lName}"></td> </p>
+<p> <td th:text="${std1.courses}"></td> </p>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Advance Form Registration 8</title>
+        <style>
+   .abcd{
+                width: 30%;
+                border: 1px solid black;
+                margin: auto;
+                padding: 20px;
+                font-size: 18px;
+            }
+    #abc-form{margin:"auto"}
+    #abc-form{ border:1px solid white; padding :10px; background:white; }
+
+
+    body {
+    background-image :  url(Form-background-image-1.jpg);
+    height: 100%;
+    background-position: down;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    </style>
+    
+    </head>
+<body>
+<div class="abcd">
+    <h2>Enter Form Details </h2>
+
+	 <!--	form th:action="@{/register}"		=> service in the controller
+			form th:object="${student}"
+			th:field="*{fName}"					=> table data<td>, Class field names	-->
+		
+    <form id="abc-form" th:action="@{/register}" method="post" th:object="${student}">
+        <table>
+            <tr>
+                <td>    Enter First name:                                                  </td>
+                <td>    <input type="text" placeholder="Enter here" name="first_name" th:field="*{fName}">     </td>
+            </tr>
+
+            <tr>
+                <td>    Enter Last name:                                                    </td>
+                <td>    <input type="text" placeholder="Enter here" name="last_name" th:field="*{lName}">       </td>
+            </tr>
+
+            <tr>
+                <td>    Enter Password:                                                         </td>
+                <td>    <input type="password" placeholder="Enter password" name="password" th:field="*{password}">    </td>
+            </tr>
+
+            <tr>
+                <td>    Select DOB:                         </td>
+                <td>    <input type="date" name="dob" th:field="*{dob}">      </td>
+            </tr>
+
+            <tr>
+                <td>    Select Gender:                                                                       </td>
+                <td>    <input type="radio" name="gender" value = "Male"> Male <input type="radio" name="gender" value = "Female"> Female    </td>
+            </tr>
+
+            <tr>
+                <td>    Enter Address:                      </td>
+                <td>    <textarea name="address" id="123" cols="20" rows="5" th:field="*{address}">
+                </textarea>
+                    <!input type="textarea" placeholder="Enter address here" rows="10" column="1" name="address"> </td>
+            </tr>
+
+            <tr>
+                <td>    Courses: </td>
+                <td><select name="course" id="234" th:field="*{courses}">
+                    <option value="Java"> Java Programming      </option>
+                    <option value="Python"> Python Programming  </option>
+                    <option value="PHP"> PHP Programming        </option>
+                    <option value="HTML"> HTML Programming      </option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td style="text-align: right">      <input type="checkbox" name="termscond">             </td>
+                <td>                                Accept term and conditions          </td>
+            </tr>
+
+            <tr>
+                <td>    </td>
+                <td>    <input type="submit">           </td>
+            </tr>
+
+            <tr>
+                <td>    </td>
+                <td>    <input type="reset">            </td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+</body>
+</html>

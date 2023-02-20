@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<title> List of Employee	</title>
+<br>
+<head><h1>	List of Employee	</h1>
+<meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+.right-aligned {
+  float: right;
+  margin: 20px;
+}
+
+.right-abc {
+  float: right;
+  margin-right: 20px;
+}
+
+</style>
+
+<a class="right-abc" th:href="@{/home}" > Home </a>
+<br>
+<a class="right-abc" th:href="@{/logout}">Logout</a>
+</head>
+
+<body>
+<br>
+<div class="right-aligned">
+<a th:href="@{/Employee/eRegister}" class="btn btn-primary">Add New Employee</a>
+</div>
+<br><br>
+<hr>
+<div>
+	<table class="table table-success table-striped">
+            <thead class="thead-dark">
+		<tr>
+			<th>Id </th>  
+			<th>First Name </th>
+			<th>Last Name</th>
+			<th>Email Id </th>
+			<th>Actions </th>
+		</tr>
+		</thead>
+		
+		<tbody>
+		<tr th:each="emp : ${std2}">  
+			<td th:text="${emp.id}"> Id </td>
+			<td th:text="${emp.firstName}" id="name-{{emp.id}}">First Name </th>
+			<td th:text="${emp.lastName}" id="lname-{{emp.id}}">Last Name</th>
+			<td th:text="${emp.email}" id="email-{{emp.id}}">Email Id </th>
+			<td>
+			
+      			<a th:href="@{/Employee/showFormForUpdate/{id}(id=${emp.id})}"
+                class="btn btn-primary">Update</a>
+                              
+      			<a th:href="@{/Employee/delete/{id}(id=${emp.id})}" class="btn btn-danger">Delete</a>
+    			</td>
+		</tr>
+		
+		</tbody>
+	</table> 
+
+</div>
+</body>
+</html>

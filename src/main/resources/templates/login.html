@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+ <style>
+   .abc{
+                width: 30%;
+                border: 1px solid black;
+                margin: auto;
+                padding: 20px;
+                font-size: 15px;
+            }
+
+    #myform table tr td input {
+    font-size: 15px;
+     }
+
+
+    </style>
+         <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="abc">
+    <h2>Fill Login Details </h2>
+ <p th:text=${error}></p>
+    <form id="myform" th:action="@{/login}" method="post">
+        <table>
+            <tr>
+                <td>    Username:                                                  </td>
+                <td>    <input type="text" placeholder="Enter here" name="username">     </td>
+            </tr>
+
+            <tr>
+                <td>    Password:                                                    </td>
+                <td>    <input type="password" placeholder="Enter here" name="password">       </td>
+            </tr>
+
+            <tr>
+                <td>    </td>
+                <td>    <input type="submit">           </td>
+            </tr>
+
+            <tr>
+                <td>    </td>
+                <td>    <input type="reset">            </td>
+            </tr>
+            
+            <tr>
+            <td>    </td>
+            <td>  <a th:href="@{/registeruser}">Register New User</a> </td>
+            </tr>
+            
+
+        </table>
+    </form>
+    
+   
+</div>
+
+
+</body>
+</html>

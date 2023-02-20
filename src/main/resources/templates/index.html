@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Project</title>
+<style>
+    body {
+    background-image :  url(formBck1.jpg);
+    height: 100%;
+    background-position: down;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+
+<body style="">
+
+Welcom to Saurav Application
+
+
+<!--<br><br>
+<a th:href="@{/upload}">3) Upload Page     </a>-->
+<br><br>
+<a th:href="@{/fetch}">1) List of Student Records            </a>
+<br><br>
+<!-- <a th:href="@{/register}">Register</a>-->
+<a th:href="@{/basicFormRegistration}"> 2) Click here for basic registration form       </a>
+<br><br>
+<a th:href="@{/Employee/listOfEmployee}">3) Employee Records       </a>
+<br><br>
+</body>
+</html>
